@@ -1,0 +1,5 @@
+{
+  "name": "Turbo Racer 2.0",
+  "description": "A high-octane 2D car game with procedural obstacle generation and AI-powered performance reviews.",
+  "requestFramePermissions": []
+}
