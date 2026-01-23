@@ -1,8 +1,8 @@
 
 import React, { useState, useCallback } from 'react';
-import GameCanvas from './components/GameCanvas.tsx';
-import { GameStatus, CAR_SKINS } from './types.ts';
-import { getGameCommentary } from './services/geminiService.ts';
+import GameCanvas from './components/GameCanvas';
+import { GameStatus, CAR_SKINS } from './types';
+import { getGameCommentary } from './services/geminiService';
 
 const App: React.FC = () => {
   const [status, setStatus] = useState<GameStatus>(GameStatus.IDLE);

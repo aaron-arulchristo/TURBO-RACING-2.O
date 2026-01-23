@@ -1,5 +1,6 @@
+
 import React, { useRef, useEffect, useCallback } from 'react';
-import { GameStatus, Car, Obstacle, GameState, ObstacleType, CAR_SKINS } from '../types.ts';
+import { GameStatus, Car, Obstacle, GameState, ObstacleType, CAR_SKINS } from '../types';
 
 interface GameCanvasProps {
   status: GameStatus;
@@ -36,7 +37,6 @@ interface Particle {
 
 const GameCanvas: React.FC<GameCanvasProps> = ({ status, selectedSkinId, onGameOver, onTogglePause }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // Fix: Added initial value null to useRef to satisfy TypeScript requirements (was line 39/40)
   const requestRef = useRef<number | null>(null);
   
   const carState = useRef({
@@ -377,7 +377,6 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ status, selectedSkinId, onGameO
       update();
       draw(ctx);
     }
-    // Fix: Using number | null for requestRef and updating current value
     requestRef.current = requestAnimationFrame(animate);
   }, [update, draw]);
 
